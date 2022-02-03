@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Rakesh Ramaswamy
  * @group             : 
- * @last modified on  : 01-24-2022
+ * @last modified on  : 02-03-2022
  * @last modified by  : Rakesh Ramaswamy
 **/
 public class DSGB2B_UserSelector {
@@ -15,7 +15,7 @@ public class DSGB2B_UserSelector {
 
     private static Map<Id, User> cachedUserById = new Map<Id, User>();
     private static Map<Id, Contact> contactsByIds = new Map<Id, Contact>();
-
+ 
     public Map<Id, Contact> getContactsByIds(Set<Id> contactIds) {
         return null;
     }
