@@ -3,6 +3,6 @@
     <types>
         <members>Calculator</members>
         <members>TestCalculator</members>
-        <name>ApexClass</name> 
+        <name>ApexClass</name>
     </types>
 </Package>
