@@ -81,7 +81,7 @@ node {
                   // println 'folder.exists() ==> '+ folder.exists()
                  if(manifestFileCheck3) {
                    println 'I am inside folder exist condition to perform delete mdapi...'
-                   bat returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d /manifest -u ${HUB_ORG}"
+                   bat returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d manifest -u ${HUB_ORG}"
                   }
 
               }
