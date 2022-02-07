@@ -69,6 +69,10 @@ node {
                   bat returnStdout: true, script: "rmdir codeconvert /S /Q"
 
                   // def folder = new File('manifest/destructiveChanges.xml')
+                  def manifestFileCheck = fileExists '/manifest'
+                  def manifestFileCheck2 = fileExists 'manifest'
+                  println 'manifest with / ==> '+manifestFileCheck
+                  println 'manifest without / ==> '+manifestFileCheck2
                   def fileCheck = fileExists '/manifest/destructiveChanges'
                   println 'fileCheck ==> '+ fileCheck
                   // println 'folder.exists() ==> '+ folder.exists()
