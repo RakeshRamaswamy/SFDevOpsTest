@@ -78,21 +78,11 @@ node {
                   def manifestFileCheck3 = fileExists 'manifest/destructiveChanges.xml'
                   println 'fileCheck with .xml ==> '+ manifestFileCheck3
 
-                  dir('manifest') {
-                    def files = findFiles() 
-                  
-                    files.each{ f -> 
-                        if(f.directory) {
-                          echo "This is directory: ${f.name} "
-                        }
-                    }
-                  }
-
                   // println 'folder.exists() ==> '+ folder.exists()
-                 // if(fileCheck) {
-                  //  println 'I am inside folder exist condition to perform delete mdapi...'
-                  //  bat returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d /manifest"
-                 // }
+                 if(manifestFileCheck3) {
+                   println 'I am inside folder exist condition to perform delete mdapi...'
+                   bat returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d /manifest"
+                  }
 
               }
               
