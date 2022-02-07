@@ -69,7 +69,7 @@ node {
                   bat returnStdout: true, script: "rmdir codeconvert /S /Q"
 
                   def folder = new File('/manifest/destructiveChanges.xml')
-
+                  println 'folder ==> '+ folder
                   if(folder.exists()) {
                     bat returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d /manifest"
                   }
