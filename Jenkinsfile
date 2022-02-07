@@ -66,7 +66,8 @@ node {
                   bat returnStatus: true, script: "mkdir codeconvert"
                   bat returnStdout: true, script: "${toolbelt} force:source:convert -r force-app/ -d codeconvert"
                   rmsg = bat returnStdout: true, script: "${toolbelt} force:mdapi:deploy -u ${HUB_ORG} -d codeconvert"
-                  bat returnStdout: true, script: "rm -R convertCode"
+                  bat returnStdout: true, script: "rm -R codeconvert"
+
               }
               
                 printf rmsg
