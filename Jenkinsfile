@@ -70,6 +70,7 @@ node {
 
                   def folder = new File('/manifest/destructiveChanges.xml')
                   println 'folder ==> '+ folder
+                  println 'folder.exists() ==> '+ folder.exists()
                   if(folder.exists()) {
                     println 'I am inside folder exist condition to perform delete mdapi...'
                     bat returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d /manifest"
