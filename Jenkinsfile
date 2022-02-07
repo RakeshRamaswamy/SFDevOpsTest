@@ -68,6 +68,12 @@ node {
                   rmsg = bat returnStdout: true, script: "${toolbelt} force:mdapi:deploy -u ${HUB_ORG} -d codeconvert"
                   bat returnStdout: true, script: "rm -R codeconvert"
 
+                  def folder = new File('/manifest/destructiveChanges.xml')
+
+                  if(folder.exists()) {
+                    bat returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d /manifest"
+                  }
+
               }
               
                 printf rmsg
