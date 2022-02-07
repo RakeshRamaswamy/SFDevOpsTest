@@ -68,10 +68,11 @@ node {
                   rmsg = bat returnStdout: true, script: "${toolbelt} force:mdapi:deploy -u ${HUB_ORG} -d codeconvert"
                   bat returnStdout: true, script: "rmdir codeconvert /S /Q"
 
-                  def folder = new File('manifest/destructiveChanges.xml')
-                  println 'folder ==> '+ folder
-                  println 'folder.exists() ==> '+ folder.exists()
-                  if(folder.exists()) {
+                  // def folder = new File('manifest/destructiveChanges.xml')
+                  def fileCheck = fileExists '/manifest/destructiveChanges.xml'
+                  println 'fileCheck ==> '+ fileCheck
+                  // println 'folder.exists() ==> '+ folder.exists()
+                  if(fileCheck) {
                     println 'I am inside folder exist condition to perform delete mdapi...'
                     bat returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d /manifest"
                   }
